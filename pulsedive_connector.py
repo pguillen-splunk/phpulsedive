@@ -193,7 +193,7 @@ class PulsediveConnector(BaseConnector):
         # Add an action result object to self (BaseConnector) to represent the action for this param
         action_result = self.add_action_result(ActionResult(dict(param)))
 
-        action_result.add_data((pypulsedive.find_indicator(param.get("indicator", "")).__dict__))
+        action_result.add_data(pypulsedive.find_indicator(param.get("indicator", "")))
 
         return action_result.set_status(phantom.APP_SUCCESS)
 
